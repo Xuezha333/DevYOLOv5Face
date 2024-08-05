@@ -1,20 +1,18 @@
-torch>=2.1.0
-torchvision>=0.16.0
-opencv-python>=4.8.0
-tqdm>=4.66.0
-PyYAML>=6.0.0
-seaborn>=0.13.0
-scipy>=1.11.0
-thop>=0.1.1
-Cython>=3.0.0
-
-### Optional - ONNX format
-# onnx>=1.14.0
-# onnxruntime>=1.16.0
-
-### Optional - TensorRT format
-# tensorrt>=8.6.0
-# pycuda>=2022.2.0
-
-### Optional - Training
-# tensorboard>=2.14.0
+torch==2.0.1
+torchvision==0.15.2
+onnx==1.14.0
+onnxruntime==1.15.1
+pycocotools==2.0.7
+PyYAML==6.0.1
+scipy==1.13.0
+onnxslim==0.1.31
+onnxruntime-gpu==1.18.0
+gradio==4.31.5
+opencv-python==4.9.0.80
+psutil==5.9.8
+py-cpuinfo==9.0.0
+huggingface-hub==0.23.2
+safetensors==0.4.3
+tensorboard==2.17.0
+seaborn==0.13.2
+requests==2.32.3
