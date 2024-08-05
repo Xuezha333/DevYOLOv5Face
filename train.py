@@ -81,6 +81,7 @@ def train(hyp, opt, device, tb_writer=None, wandb=None, pb_interval=None):
         with torch_distributed_zero_first(rank):
             attempt_download(weights)  # download if not found locally
         ckpt = torch.load(weights, map_location=device)  # load checkpoint
+        #print(ckpt)
         if hyp.get('anchors'):
             ckpt['model'].yaml['anchors'] = round(hyp['anchors'])  # force autoanchor
         model = Model(opt.cfg or ckpt['model'].yaml, ch=3, nc=nc).to(device)  # create
@@ -154,6 +155,7 @@ def train(hyp, opt, device, tb_writer=None, wandb=None, pb_interval=None):
 
         # Epochs
         start_epoch = ckpt['epoch'] + 1
+        print(start_epoch)
         if opt.resume:
             assert start_epoch > 0, '%s training to %g epochs is finished, nothing to resume.' % (weights, epochs)
         if epochs < start_epoch:
@@ -201,7 +203,7 @@ def train(hyp, opt, device, tb_writer=None, wandb=None, pb_interval=None):
 
         if not opt.resume:
             labels = np.concatenate(dataset.labels, 0)
-            c = torch.tensor(labels[:, 0])  # classes
+            c = torch.tensor(labels[:, 0] ,dtype=torch.float32)  # classes
             # cf = torch.bincount(c.long(), minlength=nc) + 1.  # frequency
             # model._initialize_biases(cf.to(device))
             if plots:
