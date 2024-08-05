@@ -1,6 +1,6 @@
 # Fork of [deepcam-cn/yolov5-face](https://github.com/deepcam-cn/yolov5-face)
 
-Differences between original repository and fork:
+Differences between original repository and fork (Some MORE edits made by Xuezha333):
 
 * Compatibility with PyTorch >=2.1. (🔥)
 * Original pretrained models and converted ONNX models from GitHub [releases page](https://github.com/clibdev/yolov5-face/releases). (🔥)
